@@ -1,5 +1,5 @@
-# aula 1
+# tarefa de frequencia
 
-aula intro sobre git
+1 - criar teste para updateTask
 
-Conceito de branch
+2 - criar teste para removeTask
