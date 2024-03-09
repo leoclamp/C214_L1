@@ -10,6 +10,15 @@ const anyTask = {
   subTasks: []
 }
 
+const taskUpdate = {
+  title: 'update_title',
+  description: 'update_description',
+  targetDate: '01/01/2024',
+  type: 'update_type',
+  priority: '2',
+  subTasks: []
+}
+
 describe('ToDoList', () => {
   describe('Testing add', () => {
     test('should add a new task to the list', () => {
@@ -28,5 +37,19 @@ describe('ToDoList', () => {
         const tasks = todoInstance.getTasks()
         expect(tasks).toEqual([])
       })
+
+    test('should update a tasks', () => {
+        const todoInstance = new ToDoList()
+        todoInstance.updateTask(0, taskUpdate)
+        const tasks = todoInstance.getTasks()
+        expect(tasks).toEqual([taskUpdate])
+    })
+
+    test('should remove a tasks', () => {
+        const todoInstance = new ToDoList()
+        todoInstance.removeTask(0)
+        const tasks = todoInstance.getTasks()
+        expect(tasks).toBeNull
+    })
   })
 })
