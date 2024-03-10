@@ -49,7 +49,7 @@ describe('ToDoList', () => {
         const todoInstance = new ToDoList()
         todoInstance.removeTask(0)
         const tasks = todoInstance.getTasks()
-        expect(tasks).toBeNull
+        expect(tasks).toEqual([])
     })
   })
 })
